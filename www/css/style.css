@@ -1,1 +1,46 @@
 /* Empty. Add your own CSS if you like */
+
+.logo {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+.myCheck {
+    padding-left: 100px;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    margin-top:25px;
+    margin-bottom:25px;
+}
+
+.Try {
+    padding-top: 35px;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    margin-top:25px;
+    margin-bottom:25px;
+    font-size: 50px !important;
+}
+
+.Try:before{
+    font-size:40px;
+}
+
+.icon.ion-ios-checkmark::before{
+    font-size: 100px !important;
+}
+
+.button.button-clear.button-positive{
+    height: 150px !important;
+}
+
+.larger{
+    padding-top: 20px !important;
+    line-height: 100px !important;
+    min-height: 100px !important;
+}
