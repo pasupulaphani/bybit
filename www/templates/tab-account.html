@@ -2,7 +2,38 @@
   <ion-content>
     <ion-list>
     <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
+        <div class="bar bar-header bar-calm">
+  			<h1 class="title">Status</h1>
+		</div>
+		<div><br></div>
+		<div class="card">
+  			<div class="item item-divider">
+    			Usage
+  			</div>
+	  		<div class="item item-text-wrap">
+	   			You have used 300MB on this network today
+	  		</div>
+	  	</div>
+
+	  	<div class="card">
+  			<div class="item item-divider">
+    			Balance
+  			</div>
+	  		<div class="item item-text-wrap">
+	   			You have used 3 bitcoins and 523 satoshis left
+	  		</div>
+	  	</div>
+
+		<button class="button button-full button-balanced">
+  			Connect
+		</button>
+	  	
+
+		<button class="button button-full button-assertive">
+  			Disconnect
+		</button>
+	  	
+
     </ion-toggle>
     </ion-list>
   </ion-content>
