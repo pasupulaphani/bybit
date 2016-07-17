@@ -52,3 +52,7 @@
 .dis{
     margin-top: 400px !important;
 }
+
+input::-webkit-input-placeholder {
+ color:black;
+}
