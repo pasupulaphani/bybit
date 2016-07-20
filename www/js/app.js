@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope, $http) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -21,40 +21,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       StatusBar.styleDefault();
     }
 
-    // hack everything here
-    window.socket = new Socket();
-    window.socket.onData = function(uintArray) {
-      var encodedString = String.fromCharCode.apply(null, uintArray);
-      var decodedString = decodeURIComponent(escape(encodedString));
-      console.log("Received data:", decodedString);
-    };
-    window.socket.onError = function(errorMessage) {
-      console.error("SOCKET_CONN_ERROR", errorMessage);
-    };
-    window.socket.onClose = function(hasError) {
-      console.error("SOCKET_CONN_CLOSED", hasError);
-    };
+    setTimeout(function () {
+          socket = new Socket();
+      //window.startCommunication(socket)
+    }, 10000)
 
-    var SERVER_IP = "127.0.0.1";
-    var SERVER_PORT = 5000;
-    window.socket.open(
-      SERVER_IP,
-      SERVER_PORT,
-      function() {
-        console.log(`Successfully connected to ${SERVER_IP}:${SERVER_PORT}`);
-        sendMsg("Hello world");
-      },
-      function(errorMessage) {
-        console.error("SOCKET_CONN_ERROR", errorMessage);
-      });
+    // function sendMsg (msg) {
+    //   var data = new Uint8Array(msg.length);
+    //   for (var i = 0; i < data.length; i++) {
+    //     data[i] = msg.charCodeAt(i);
+    //   }
+    //   console.log("Sending message: ", msg);
+    //   socket.write(data);
+    // }
 
-    function sendMsg (msg) {
-      var data = new Uint8Array(msg.length);
-      for (var i = 0; i < data.length; i++) {
-        data[i] = msg.charCodeAt(i);
-      }
-      console.log("Sending message: ", msg);
-      window.socket.write(data);
+    $rootScope.triggerConn = function () {
+      $http.get("http://localhost:3001");
     }
   });
 })
