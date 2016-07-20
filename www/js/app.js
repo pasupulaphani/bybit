@@ -105,6 +105,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
+    .state('tab.status', {
+      url: '/status',
+      views: {
+        'tab-status': {
+          templateUrl: 'templates/tab-status.html',
+          controller: 'ChatDetailCtrl'
+        }
+      }
+    })
   .state('tab.account', {
     url: '/account',
     views: {
